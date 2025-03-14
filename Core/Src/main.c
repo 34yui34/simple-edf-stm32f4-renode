@@ -25,24 +25,6 @@
 
 void SystemClock_Config(void);
 
-void Task1(void) {
-    printf("Inside task1\r\n");
-    while (1) {
-        /* Delay using a simple counter */
-        for (volatile uint32_t i = 0; i < 1000000; i++);
-        printf("Finish loop task1\r\n");
-    }
-}
-
-void Task2(void) {
-    printf("Inside task2\r\n");
-    while (1) {
-        /* Delay using a simple counter */
-        for (volatile uint32_t i = 0; i < 2000000; i++);
-        printf("Finish loop task2\r\n");
-    }
-}
-
 /**
   * @brief  The application entry point.
   * @retval int
@@ -63,19 +45,7 @@ int main(void)
     /* Output a message on Hyperterminal using printf function */
     printf("UART Printf Example: retarget the C library printf function to the UART\n");
 
-    init_task(&TCB_1, Task1);
-    init_task(&TCB_2, Task2);
-
-    /* Set current task */
-    current_task = &TCB_1;
-
-    /* Configure system to use Process Stack for exceptions handlers */
-    __set_CONTROL(__get_CONTROL() | 0x02);
-
-    /* Set PSP to the current task's stack pointer */
-    __set_PSP((uint32_t)current_task->stack_ptr);
-
-    Task1();
+    create_example_tasks();
 
     while(1);
 }
