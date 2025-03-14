@@ -33,7 +33,11 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#ifdef ENABLE_DEBUG_LOG
+#define DEBUG_LOG(...) printf(__VA_ARGS__)
+#else
+#define DEBUG_LOG(...)
+#endif /* ENABLE_DEBUG_LOG */
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

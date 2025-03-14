@@ -1,5 +1,7 @@
 #include "task.h"
 #include "timer2_tick.h"
+#include "main.h"
+#include <stdbool.h>
 
 /* Task management */
 TCB_t tasks[MAX_TASKS];
@@ -13,8 +15,8 @@ static void task3(void);
 
 void create_example_tasks(void) {
     /* Create tasks with their periods (in system ticks) and execution times */
-    create_task(task1, 200, 50, "Task1");    /* 200ms period, ~50ms execution time */
-    create_task(task2, 500, 100, "Task2");   /* 500ms period, ~100ms execution time */
+    create_task(task1, 2000, 50, "Task1");    /* 200ms period, ~50ms execution time */
+    create_task(task2, 5000, 100, "Task2");   /* 500ms period, ~100ms execution time */
     create_task(task3, 100, 20, "Task3");    /* 100ms period, ~20ms execution time */
 
     /* Start the scheduler */
@@ -53,6 +55,13 @@ int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_tim
     strncpy(task->name, name, sizeof(task->name) - 1);
     task->name[sizeof(task->name) - 1] = '\0'; /* Ensure null termination */
 
+    DEBUG_LOG("*** Create task: %s ***\r\n", task->name);
+    DEBUG_LOG("\t- Current ticks %u,\r\n", system_ticks);
+    DEBUG_LOG("\t- state %u,\r\n", task->state);
+    DEBUG_LOG("\t- period %u,\r\n", task->period);
+    DEBUG_LOG("\t- xc time %u,\r\n", task->execution_time);
+    DEBUG_LOG("\t- deadline at %u\r\n", task->deadline);
+
     return task_id;
 }
 
@@ -67,7 +76,7 @@ static int find_earliest_deadline_task(void) {
     uint32_t earliest_deadline = 0xFFFFFFFF;
 
     for (uint8_t i = 0; i < num_tasks; i++) {
-        if (tasks[i].state == TASK_READY && tasks[i].deadline < earliest_deadline) {
+        if (tasks[i].state != TASK_BLOCKED && tasks[i].deadline < earliest_deadline) {
             earliest_deadline = tasks[i].deadline;
             earliest_task = i;
         }
@@ -98,6 +107,14 @@ static void context_switch(void) {
         /* Handle idle state */
         return;
     }
+
+    DEBUG_LOG("\r\n");
+    for (uint8_t i = 0; i < num_tasks; i++) {
+        DEBUG_LOG("*** %s state is %d ***\r\n", tasks[i].name, tasks[i].state);
+    }
+    DEBUG_LOG("### Schedule task: %s ###\r\n", tasks[current_task_id].name);
+    DEBUG_LOG("\t- ticks until deadline %u\r\n", tasks[current_task_id].deadline - system_ticks);
+    DEBUG_LOG("\r\n");
 
     /* Set PSP to the new task's stack pointer */
     __set_PSP((uint32_t)tasks[current_task_id].stack_ptr);
@@ -134,13 +151,8 @@ static void tick_callback_handler(void) {
     /* Check for tasks that need to be activated (when period is reached) */
     for (uint8_t i = 0; i < num_tasks; i++) {
         if (system_ticks >= tasks[i].deadline) {
-            /* Set new deadline */
-            tasks[i].deadline = system_ticks + tasks[i].period;
-
-            /* Make task ready if it's not already */
-            if (tasks[i].state == TASK_BLOCKED) {
-                tasks[i].state = TASK_READY;
-            }
+            /* If task cannot achieve deadline, assert */
+            assert_param(false);
         }
     }
 }
@@ -168,6 +180,7 @@ static void task1(void) {
         printf("Task1 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
@@ -186,6 +199,7 @@ static void task2(void) {
         printf("Task2 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
@@ -204,6 +218,7 @@ static void task3(void) {
         printf("Task3 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
