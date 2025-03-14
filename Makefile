@@ -38,8 +38,9 @@ BUILD_DIR = build
 C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/task.c \
+Core/Src/uart1_logger.c \
+Core/Src/timer2_tick.c \
 Core/Src/stm32f4xx_it.c \
-Core/Src/stm32f4xx_hal_msp.c \
 Core/Src/syscalls.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c \

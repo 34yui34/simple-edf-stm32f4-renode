@@ -27,9 +27,6 @@ extern int __io_getchar(void) __attribute__((weak));
   register char * stack_ptr asm("sp");
 #endif
 
-
-
-
 caddr_t _sbrk(int incr)
 {
 	extern char end asm("end");
