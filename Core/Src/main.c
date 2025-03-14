@@ -30,9 +30,6 @@ void Task1(void) {
         /* Delay using a simple counter */
         for (volatile uint32_t i = 0; i < 1000000; i++);
         printf("Finish loop task1\r\n");
-
-        /* Trigger context switch */
-        SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
     }
 }
 
@@ -42,9 +39,6 @@ void Task2(void) {
         /* Delay using a simple counter */
         for (volatile uint32_t i = 0; i < 2000000; i++);
         printf("Finish loop task2\r\n");
-
-        /* Trigger context switch */
-        SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
     }
 }
 

@@ -46,5 +46,6 @@ void TIM2_IRQHandler(void) {
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-  //  printf("Timer2 Interrupt!\n");
+    /* Trigger context switch */
+    SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
 }
