@@ -20,7 +20,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "task.h"
 #include "stm32f4xx_it.h"
+#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -58,7 +60,40 @@
 /* External variables --------------------------------------------------------*/
 
 /* USER CODE BEGIN EV */
-
+/* Function to switch context between tasks */
+void SwitchContext(void) {
+  /* Save current task's context */
+  __asm volatile (
+      "MRS R0, PSP\n"           /* Get current PSP value */
+      "STMDB R0!, {R4-R11}\n"   /* Save R4-R11 to stack */
+      "MSR PSP, R0\n"           /* Update PSP */
+  );
+  
+  /* Store current stack pointer */
+  current_task->stack_ptr = (uint32_t *)__get_PSP();
+  
+  /* Choose next task (simple toggle between the two tasks) */
+  if (current_task == &TCB_1) {
+      current_task = &TCB_2;
+  } else {
+      current_task = &TCB_1;
+  }
+  
+  /* Set PSP to the new task's stack pointer */
+  __set_PSP((uint32_t)current_task->stack_ptr);
+  
+  /* Restore context of the new task */
+  __asm volatile (
+      "MRS R0, PSP\n"           /* Get current PSP value */
+      "LDMIA R0!, {R4-R11}\n"   /* Restore R4-R11 from stack */
+      "MSR PSP, R0\n"           /* Update PSP */
+  );
+  
+  /* Return using EXC_RETURN value to ensure proper exception handling */
+  __asm volatile (
+      "BX LR\n"
+  );
+}
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -173,6 +208,14 @@ void PendSV_Handler(void)
   /* USER CODE BEGIN PendSV_IRQn 0 */
 
   /* USER CODE END PendSV_IRQn 0 */
+  /* Disable interrupts */
+  __disable_irq();
+    
+  /* Perform context switch */
+  SwitchContext();
+  
+  /* Enable interrupts */
+  __enable_irq();
   /* USER CODE BEGIN PendSV_IRQn 1 */
 
   /* USER CODE END PendSV_IRQn 1 */
