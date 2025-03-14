@@ -2,11 +2,10 @@ $bin ?= @build/F407Disc.elf
 
 mach create
 machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
-machine LoadPlatformDescription @extra.repl
 
 sysbus.cpu PerformanceInMips 125
 
-showAnalyzer sysbus.uart1
+showAnalyzer sysbus.usart1
 
 macro reset
 """
