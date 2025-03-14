@@ -1,5 +1,6 @@
 #include "main.h"
 #include "timer2_tick.h"
+#include <stdbool.h>
 
 static TIM_HandleTypeDef htim2;
 
@@ -15,15 +16,14 @@ void timer2_tick_init(void) {
     htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
     if (HAL_TIM_Base_Init(&htim2) != HAL_OK) {
         /* Initialization Error */
-        Error_Handler();
+        assert_param(false);
     }
 
     /* Start the TIM Base generation in interrupt mode */
     /* Start Channel1 */
-    if (HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
-    {
+    if (HAL_TIM_Base_Start_IT(&htim2) != HAL_OK) {
         /* Starting Error */
-        Error_Handler();
+        assert_param(false);
     }
 }
 
