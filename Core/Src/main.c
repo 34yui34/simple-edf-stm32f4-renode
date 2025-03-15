@@ -124,7 +124,7 @@ static void task1(void) {
         /* Task 1 code */
         printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*40; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*60; i++);
         printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -137,7 +137,7 @@ static void task2(void) {
         /* Task 2 code */
         printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*60; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*70; i++);
         printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -150,7 +150,7 @@ static void task3(void) {
         /* Task 3 code */
         printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*80; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*100; i++);
         printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -197,9 +197,9 @@ int main(void)
 #ifdef RUN_UNSCHELUDABLE_TASKSET_EDF
     printf("Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program\r\n");
     /* Create tasks with their periods (in system ticks) and execution times */
-    create_task(task1, 500, 200, 500, "Task1");    /* 500 ticks period, ~200 ticks execution time, 500 ticks relative deadline */
-    create_task(task2, 700, 300, 700, "Task2");    /* 700 ticks period, ~300 ticks execution time, 700 ticks relative deadline */
-    create_task(task3, 2000, 400, 2000, "Task3");  /* 2000 ticks period, ~400 ticks execution time, 2000 ticks relative deadline */
+    create_task(task1, 500, 300, 500, "Task1");    /* 500 ticks period, ~300 ticks execution time, 500 ticks relative deadline */
+    create_task(task2, 700, 350, 700, "Task2");    /* 700 ticks period, ~350 ticks execution time, 700 ticks relative deadline */
+    create_task(task3, 2000, 500, 2000, "Task3");  /* 2000 ticks period, ~500 ticks execution time, 2000 ticks relative deadline */
 #endif /* RUN_UNSCHELUDABLE_TASKSET_EDF */
 
     /* Start the scheduler */

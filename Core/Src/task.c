@@ -83,7 +83,7 @@ void task_yield(void) {
     /* Voluntarily yield by blocking this task */
     __disable_irq();
     tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period;
-    tasks[current_task_id].wait_time = tasks[current_task_id].period;
+    tasks[current_task_id].wait_time = tasks[current_task_id].period - tasks[current_task_id].execution_time;
     tasks[current_task_id].state = TASK_BLOCKED;
     SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
     __enable_irq();
