@@ -23,15 +23,26 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+// #define RUN_NORMAL_SCHELUDABLE_EDF
+// #define RUN_CONCURRENT_SCHELUDABLE_EDF
+#define RUN_UNSCHELUDABLE_TASKSET_EDF
+
+#if defined(RUN_NORMAL_SCHELUDABLE_EDF) + defined(RUN_CONCURRENT_SCHELUDABLE_EDF) + defined(RUN_UNSCHELUDABLE_TASKSET_EDF) != 1
+#error Define exactly one of RUN_NORMAL_SCHELUDABLE_EDF, RUN_CONCURRENT_SCHELUDABLE_EDF, RUN_UNSCHELUDABLE_TASKSET_EDF
+#endif
+
+#define LOOP_PER_5_TICKS 90000
+
 void SystemClock_Config(void);
 
+#ifdef RUN_NORMAL_SCHELUDABLE_EDF
 /* Example task 1 */
 static void task1(void) {
     while(1) {
         /* Task 1 code */
         printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < 500000; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*10; i++);
         printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -44,7 +55,7 @@ static void task2(void) {
         /* Task 2 code */
         printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < 1000000; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*20; i++);
         printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -57,12 +68,95 @@ static void task3(void) {
         /* Task 3 code */
         printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < 200000; i++);
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*4; i++);
         printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
     }
 }
+#endif  /* RUN_NORMAL_SCHELUDABLE_EDF */
+
+#ifdef RUN_CONCURRENT_SCHELUDABLE_EDF
+/* Example task 1 */
+static void task1(void) {
+    while(1) {
+        /* Task 1 code */
+        printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*100; i++);
+        printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 2 */
+static void task2(void) {
+    while(1) {
+        /* Task 2 code */
+        printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*100; i++);
+        printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 3 - higher frequency task */
+static void task3(void) {
+    while(1) {
+        /* Task 3 code */
+        printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*100; i++);
+        printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+#endif  /* RUN_CONCURRENT_SCHELUDABLE_EDF */
+
+#ifdef RUN_UNSCHELUDABLE_TASKSET_EDF
+/* Example task 1 */
+static void task1(void) {
+    while(1) {
+        /* Task 1 code */
+        printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*40; i++);
+        printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 2 */
+static void task2(void) {
+    while(1) {
+        /* Task 2 code */
+        printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*60; i++);
+        printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 3 - higher frequency task */
+static void task3(void) {
+    while(1) {
+        /* Task 3 code */
+        printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*80; i++);
+        printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+#endif  /* RUN_UNSCHELUDABLE_TASKSET_EDF */
 
 /**
   * @brief  The application entry point.
@@ -84,10 +178,29 @@ int main(void)
     uart1_logger_init();
     timer2_tick_init();
 
+#ifdef RUN_NORMAL_SCHELUDABLE_EDF
+    printf("Start: run RUN_NORMAL_SCHELUDABLE_EDF program\r\n");
     /* Create tasks with their periods (in system ticks) and execution times */
-    create_task(task1, 2000, 50, 150, "Task1");    /* 200ms period, ~50ms execution time */
-    create_task(task2, 5000, 100, 250, "Task2");   /* 500ms period, ~100ms execution time */
-    create_task(task3, 100, 20, 100, "Task3");     /* 100ms period, ~20ms execution time */
+    create_task(task1, 2000, 50, 150, "Task1");    /* 2000 ticks period, ~50 ticks execution time, 150 ticks relative deadline */
+    create_task(task2, 5000, 100, 250, "Task2");   /* 5000 ticks period, ~100 ticks execution time, 250 ticks relative deadline */
+    create_task(task3, 100, 20, 50, "Task3");      /* 100 ticks period, ~20 ticks execution time, 50 ticks relative deadline */
+#endif /* RUN_NORMAL_SCHELUDABLE_EDF */
+
+#ifdef RUN_CONCURRENT_SCHELUDABLE_EDF
+    printf("Start: run RUN_CONCURRENT_SCHELUDABLE_EDF program\r\n");
+    /* Create tasks with their periods (in system ticks) and execution times */
+    create_task(task1, 1600, 500, 1600, "Task1");    /* 1600 ticks period, ~500 ticks execution time, 530 ticks relative deadline */
+    create_task(task2, 1600, 500, 1600, "Task2");    /* 1600 ticks period, ~500 ticks execution time, 530 ticks relative deadline */
+    create_task(task3, 1600, 500, 1600, "Task3");    /* 1600 ticks period, ~500 ticks execution time, 530 ticks relative deadline */
+#endif /* RUN_CONCURRENT_SCHELUDABLE_EDF */
+
+#ifdef RUN_UNSCHELUDABLE_TASKSET_EDF
+    printf("Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program\r\n");
+    /* Create tasks with their periods (in system ticks) and execution times */
+    create_task(task1, 500, 200, 500, "Task1");    /* 500 ticks period, ~200 ticks execution time, 500 ticks relative deadline */
+    create_task(task2, 700, 300, 700, "Task2");    /* 700 ticks period, ~300 ticks execution time, 700 ticks relative deadline */
+    create_task(task3, 2000, 400, 2000, "Task3");  /* 2000 ticks period, ~400 ticks execution time, 2000 ticks relative deadline */
+#endif /* RUN_UNSCHELUDABLE_TASKSET_EDF */
 
     /* Start the scheduler */
     start_scheduler();
