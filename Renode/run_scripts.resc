@@ -1,7 +1,7 @@
-$bin ?= @build/F407Disc.elf
+$bin ?= @build/stm32f407Disc_EDF_Demo.elf
 
 mach create
-machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
+machine LoadPlatformDescription @Renode/stm32f4_discovery.repl
 
 sysbus.cpu PerformanceInMips 125
 
