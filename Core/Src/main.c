@@ -25,12 +25,54 @@
 
 void SystemClock_Config(void);
 
+/* Example task 1 */
+static void task1(void) {
+    while(1) {
+        /* Task 1 code */
+        printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < 500000; i++);
+        printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 2 */
+static void task2(void) {
+    while(1) {
+        /* Task 2 code */
+        printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < 1000000; i++);
+        printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
+/* Example task 3 - higher frequency task */
+static void task3(void) {
+    while(1) {
+        /* Task 3 code */
+        printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
+        /* Simulate work with delay */
+        for (volatile uint32_t i = 0; i < 200000; i++);
+        printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
+        /* Yield as task is finished for current period */
+        task_yield();
+    }
+}
+
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
+    /* Disable interrupt first */
+    __disable_irq();
+
     NVIC_SetPriority(PendSV_IRQn, 0xFF);
 
     HAL_Init();
@@ -42,12 +84,15 @@ int main(void)
     uart1_logger_init();
     timer2_tick_init();
 
-    /* Output a message on Hyperterminal using printf function */
-    printf("UART Printf Example: retarget the C library printf function to the UART\n");
+    /* Create tasks with their periods (in system ticks) and execution times */
+    create_task(task1, 2000, 50, 150, "Task1");    /* 200ms period, ~50ms execution time */
+    create_task(task2, 5000, 100, 250, "Task2");   /* 500ms period, ~100ms execution time */
+    create_task(task3, 100, 20, 100, "Task3");     /* 100ms period, ~20ms execution time */
 
-    create_example_tasks();
-
-    while(1);
+    /* Start the scheduler */
+    start_scheduler();
+    /* Should not get here! */
+    assert_param(false);
 }
 
 /**

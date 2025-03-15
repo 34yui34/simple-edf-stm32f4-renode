@@ -29,6 +29,7 @@ typedef struct {
 
 int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_time, uint32_t deadline_period, const char *name);
 uint32_t get_tick(void);
-void create_example_tasks(void);
+void task_yield(void);
+void start_scheduler(void);
 
 #endif

@@ -53,6 +53,4 @@ void TIM2_IRQHandler(void) {
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     /* Call tick handler function */
     if (tick_cb_) tick_cb_();
-    /* Trigger context switch */
-    SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
 }
