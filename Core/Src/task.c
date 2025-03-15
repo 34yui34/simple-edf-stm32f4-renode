@@ -12,19 +12,24 @@ static volatile uint32_t system_ticks = 0;
 static void task1(void);
 static void task2(void);
 static void task3(void);
+static void idle_task_func(void);
 
 void create_example_tasks(void) {
+    __disable_irq();
+
+    /* Set up idle task */
+    create_task(idle_task_func, 0xFFFFFFFF, 0, 0xFFFFFFFF, "IdleTask");
     /* Create tasks with their periods (in system ticks) and execution times */
-    create_task(task1, 2000, 50, "Task1");    /* 200ms period, ~50ms execution time */
-    create_task(task2, 5000, 100, "Task2");   /* 500ms period, ~100ms execution time */
-    create_task(task3, 100, 20, "Task3");    /* 100ms period, ~20ms execution time */
+    create_task(task1, 2000, 50, 150, "Task1");    /* 200ms period, ~50ms execution time */
+    // create_task(task2, 5000, 100, 250, "Task2");   /* 500ms period, ~100ms execution time */
+    create_task(task3, 100, 20, 100, "Task3");    /* 100ms period, ~20ms execution time */
 
     /* Start the scheduler */
     start_scheduler();
 }
 
 /* Initialize task control block */
-int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_time, const char *name) {
+int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_time, uint32_t deadline_period, const char *name) {
     if (num_tasks >= MAX_TASKS) {
         return 0xFF; /* No space for new task */
     }
@@ -38,17 +43,34 @@ int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_tim
     /* Set initial stack pointer to point to the end of the stack */
     task->stack_ptr = &task->stack[STACK_SIZE - 16];
 
-    /* Set the program counter to the task function */
-    task->stack[STACK_SIZE - 2] = (uint32_t)task_func; /* PC */
-
-    /* Set the initial PSR (Program Status Register) with T-bit set (Thumb mode) */
-    task->stack[STACK_SIZE - 1] = 0x01000000; /* PSR */
+    /* Set up initial stack frame */
+    task->stack[STACK_SIZE - 1] = 0x01000000;      /* PSR (T-bit set for Thumb mode) */
+    task->stack[STACK_SIZE - 2] = (uint32_t)task_func;  /* PC */
+    task->stack[STACK_SIZE - 3] = 0xFFFFFFFF;      /* LR (dummy return address) */
+    task->stack[STACK_SIZE - 4] = 0;               /* R12 */
+    task->stack[STACK_SIZE - 5] = 0;               /* R3 */
+    task->stack[STACK_SIZE - 6] = 0;               /* R2 */
+    task->stack[STACK_SIZE - 7] = 0;               /* R1 */
+    task->stack[STACK_SIZE - 8] = 0;               /* R0 */
+    task->stack[STACK_SIZE - 9] = 0;               /* R11 */
+    task->stack[STACK_SIZE - 10] = 0;              /* R10 */
+    task->stack[STACK_SIZE - 11] = 0;              /* R9 */
+    task->stack[STACK_SIZE - 12] = 0;              /* R8 */
+    task->stack[STACK_SIZE - 13] = 0;              /* R7 */
+    task->stack[STACK_SIZE - 14] = 0;              /* R6 */
+    task->stack[STACK_SIZE - 15] = 0;              /* R5 */
+    task->stack[STACK_SIZE - 16] = 0;              /* R4 */
 
     /* Initialize task parameters */
     task->state = TASK_READY;
     task->period = period;
+    task->deadline_period = deadline_period;
     task->execution_time = execution_time;
-    task->deadline = system_ticks + period;  /* Initial deadline */
+    if (deadline_period == 0xFFFFFFFF)
+        task->deadline = deadline_period;
+    else
+        task->deadline = system_ticks + deadline_period;  /* Initial deadline */
+    task->wait_time = 0;    /* Start executing immediately */
     task->task_func = task_func;
 
     /* Copy task name */
@@ -76,11 +98,12 @@ static int find_earliest_deadline_task(void) {
     uint32_t earliest_deadline = 0xFFFFFFFF;
 
     for (uint8_t i = 0; i < num_tasks; i++) {
-        if (tasks[i].state != TASK_BLOCKED && tasks[i].deadline < earliest_deadline) {
+        if (tasks[i].state != TASK_BLOCKED && tasks[i].deadline <= earliest_deadline) {
             earliest_deadline = tasks[i].deadline;
             earliest_task = i;
         }
     }
+    printf("DEBUG: earliest task %d\r\n", earliest_task);
 
     return earliest_task;
 }
@@ -119,9 +142,6 @@ static void context_switch(void) {
     /* Set PSP to the new task's stack pointer */
     __set_PSP((uint32_t)tasks[current_task_id].stack_ptr);
 
-    /* Update task state */
-    tasks[current_task_id].state = TASK_RUNNING;
-
     /* Restore context of the new task */
     __asm volatile (
         "MRS R0, PSP\n"           /* Get current PSP value */
@@ -135,11 +155,6 @@ void schedule_next_task(void) {
     /* Find task with earliest deadline */
     uint8_t next_task = find_earliest_deadline_task();
 
-    /* If current task is still running, mark it as ready */
-    if (current_task_id != 0xFF) {
-        tasks[current_task_id].state = TASK_READY;
-    }
-
     /* Update current task ID */
     current_task_id = next_task;
 }
@@ -150,21 +165,30 @@ static void tick_callback_handler(void) {
 
     /* Check for tasks that need to be activated (when period is reached) */
     for (uint8_t i = 0; i < num_tasks; i++) {
-        if (system_ticks >= tasks[i].deadline) {
+        if (tasks[i].deadline != 0xFFFFFFFF && system_ticks >= tasks[i].deadline) {
             /* If task cannot achieve deadline, assert */
             assert_param(false);
+        }
+        if (tasks[i].wait_time > 0) {
+            tasks[i].wait_time = tasks[i].wait_time - 1;
+        }
+        if (tasks[i].wait_time == 0) {
+            tasks[i].state = TASK_READY;
         }
     }
 }
 
 /* Idle task - runs when no other tasks are ready */
-static void idle_task(void) {
+static void idle_task_func(void) {
+    /* Low power mode could be entered here */
     while(1) {
-        /* Low power mode could be entered here */
-        printf("Idle task entered\r\n");
-
-        /* Small delay */
+        printf("Idle entered\r\n");
+        /* Simulate work with delay */
         for (volatile uint32_t i = 0; i < 100000; i++);
+
+        __disable_irq();
+        SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
+        __enable_irq();
     }
 }
 
@@ -180,7 +204,8 @@ static void task1(void) {
         printf("Task1 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
-        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period;
+        tasks[current_task_id].wait_time = tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
@@ -199,7 +224,8 @@ static void task2(void) {
         printf("Task2 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
-        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period;
+        tasks[current_task_id].wait_time = tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
@@ -218,7 +244,8 @@ static void task3(void) {
         printf("Task3 finished\r\n");
         /* Voluntarily yield by blocking this task */
         __disable_irq();
-        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period;
+        tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period;
+        tasks[current_task_id].wait_time = tasks[current_task_id].period;
         tasks[current_task_id].state = TASK_BLOCKED;
         SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
         __enable_irq();
