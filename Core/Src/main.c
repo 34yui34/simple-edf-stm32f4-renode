@@ -31,8 +31,6 @@
 #error Define exactly one of RUN_NORMAL_SCHELUDABLE_EDF, RUN_CONCURRENT_SCHELUDABLE_EDF, RUN_UNSCHELUDABLE_TASKSET_EDF
 #endif
 
-#define LOOP_PER_5_TICKS 70000
-
 void SystemClock_Config(void);
 
 #ifdef RUN_NORMAL_SCHELUDABLE_EDF
@@ -42,7 +40,7 @@ static void task1(void) {
         /* Task 1 code */
         printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*2; i++);
+        HAL_Delay(9);
         printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -55,7 +53,7 @@ static void task2(void) {
         /* Task 2 code */
         printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*1; i++);
+        HAL_Delay(4);
         printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -68,7 +66,7 @@ static void task3(void) {
         /* Task 3 code */
         printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*1; i++);
+        HAL_Delay(4);
         printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -83,7 +81,7 @@ static void task1(void) {
         /* Task 1 code */
         printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*2; i++);
+        HAL_Delay(9);
         printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -96,7 +94,7 @@ static void task2(void) {
         /* Task 2 code */
         printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*2; i++);
+        HAL_Delay(9);
         printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -109,7 +107,7 @@ static void task3(void) {
         /* Task 3 code */
         printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*2; i++);
+        HAL_Delay(9);
         printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -124,7 +122,7 @@ static void task1(void) {
         /* Task 1 code */
         printf("\r\n+++++++++++++++++++++++ Task1 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*4; i++);
+        HAL_Delay(19);
         printf("\r\n++++++++++++++++++++++ Task1 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -137,7 +135,7 @@ static void task2(void) {
         /* Task 2 code */
         printf("\r\n+++++++++++++++++++++++ Task2 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*2; i++);
+        HAL_Delay(9);
         printf("\r\n++++++++++++++++++++++ Task2 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
@@ -150,7 +148,7 @@ static void task3(void) {
         /* Task 3 code */
         printf("\r\n+++++++++++++++++++++++ Task3 started at tick %u +++++++++++++++++++++++\r\n", get_tick());
         /* Simulate work with delay */
-        for (volatile uint32_t i = 0; i < LOOP_PER_5_TICKS*4; i++);
+        HAL_Delay(19);
         printf("\r\n++++++++++++++++++++++ Task3 finished at tick %u ++++++++++++++++++++++\r\n", get_tick());
         /* Yield as task is finished for current period */
         task_yield();
