@@ -55,7 +55,7 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 9
-++++++++++++++++++++++ Task3 finished at tick 6 ++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 5 ++++++++++++++++++++++
 ========= task Task3 swapped out for task Task2 at ticks 6 =========
 *** Task1 state is READY ***
 *** Task2 state is RUNNING ***
@@ -63,13 +63,13 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 24
++++++++++++++++++++++++ Task2 started at tick 6 +++++++++++++++++++++++
 *** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 23
-+++++++++++++++++++++++ Task2 started at tick 7 +++++++++++++++++++++++
 *** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -94,14 +94,15 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 19
-*** Task1 state is READY ***
-*** Task2 state is RUNNING ***
+++++++++++++++++++++++ Task2 finished at tick 10 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 11 =========
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 18
-++++++++++++++++++++++ Task2 finished at tick 12 ++++++++++++++++++++++
-========= task Task2 swapped out for task Task1 at ticks 12 =========
+### Schedule task: Task1 ###
+ - ticks until deadline 29
++++++++++++++++++++++++ Task1 started at tick 11 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -114,7 +115,6 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 27
-+++++++++++++++++++++++ Task1 started at tick 13 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -163,26 +163,26 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 19
-*** Task1 state is RUNNING ***
+++++++++++++++++++++++ Task1 finished at tick 21 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 21 =========
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 18
-*** Task1 state is RUNNING ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967274
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 17
-*** Task1 state is RUNNING ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967273
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 16
-++++++++++++++++++++++ Task1 finished at tick 24 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 24 =========
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967272
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -219,6 +219,12 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967266
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967265
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -300,12 +306,6 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967255
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
  - ticks until deadline 4294967254
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
@@ -336,15 +336,15 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967249
-========= task IdleTask swapped out for task Task2 at ticks 47 =========
+ - ticks until deadline 4294967250
+========= task IdleTask swapped out for task Task2 at ticks 46 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 47 +++++++++++++++++++++++
++++++++++++++++++++++++ Task2 started at tick 46 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -369,34 +369,21 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 26
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 52 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 52 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967243
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967242
-========= task IdleTask swapped out for task Task1 at ticks 54 =========
+++++++++++++++++++++++ Task2 finished at tick 51 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 51 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 54 +++++++++++++++++++++++
++++++++++++++++++++++++ Task1 started at tick 51 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -433,6 +420,24 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 34
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 33
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 32
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 31
 ========= task Task1 swapped out for task Task3 at ticks 61 =========
 *** Task1 state is READY ***
 *** Task2 state is BLOCKED ***
@@ -478,39 +483,39 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
- - ticks until deadline 28
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 27
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 26
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
  - ticks until deadline 25
-*** Task1 state is RUNNING ***
+++++++++++++++++++++++ Task1 finished at tick 66 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 66 =========
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967229
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 71 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 71 =========
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967228
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967227
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967226
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967225
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -534,12 +539,6 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967222
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
  - ticks until deadline 4294967221
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
@@ -547,6 +546,12 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967220
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967219
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -600,12 +605,6 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967212
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
  - ticks until deadline 4294967211
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
@@ -618,15 +617,15 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967209
-========= task IdleTask swapped out for task Task2 at ticks 87 =========
+ - ticks until deadline 4294967210
+========= task IdleTask swapped out for task Task2 at ticks 86 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 87 +++++++++++++++++++++++
++++++++++++++++++++++++ Task2 started at tick 86 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -645,6 +644,12 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 27
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 26
 ========= task Task2 swapped out for task Task3 at ticks 91 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is READY ***
@@ -677,7 +682,7 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 11
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
@@ -685,54 +690,27 @@ Start: run RUN_NORMAL_SCHELUDABLE_EDF program
  - ticks until deadline 10
 ++++++++++++++++++++++ Task3 finished at tick 96 ++++++++++++++++++++++
 ========= task Task3 swapped out for task Task2 at ticks 96 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 21
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 20
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 19
-++++++++++++++++++++++ Tas
-*
-shed at tick 98 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 99 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967196
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967195
-========= task IdleTask swapped out for task Task1 at ticks 101 =========
+++++++++++++++++++++++ Task2 finished at tick 96 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 96 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 101 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 39
++++++++++++++++++++++++ Task1 started at tick 97 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -793,8 +771,38 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 112 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 112 =========
+++++++++++++++++++++++ Task1 finished at tick 107 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 107 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967188
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967187
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967186
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967185
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967184
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -925,38 +933,14 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967165
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967164
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967163
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967163
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967162
-========= task IdleTask swapped out for task Task2 at ticks 134 =========
+========= task IdleTask swapped out for task Task2 at ticks 131 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 134 +++++++++++++++++++++++
++++++++++++++++++++++++ Task2 started at tick 131 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -987,368 +971,22 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 139 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 139 =========
+++++++++++++++++++++++ Task2 finished at tick 136 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 136 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967156
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967155
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967154
-========= task IdleTask swapped out for task Task1 at ticks 142 =========
+ - ticks until deadline 4294967159
+========= task IdleTask swapped out for task Task1 at ticks 137 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 142 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 36
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 35
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 34
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 33
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 32
-========= task Task1 swapped out for task Task3 at ticks 151 =========
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 151 +++++++++++++++++++++++
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 156 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task1 at ticks 156 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 26
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 25
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 159 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 159 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967136
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967135
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967134
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967133
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967132
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967131
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967130
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967129
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967129
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967128
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967127
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967126
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967125
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967124
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967123
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967122
-========= task IdleTask swapped out for task Task2 at ticks 174 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 174 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 179 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 179 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967116
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967115
-========= task IdleTask swapped out for task Task3 at ticks 181 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 181 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 186 ++++++++++++++++++++++
-========= task Task3 swapped out for task IdleTask at ticks 186 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967109
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967108
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967107
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967107
-========= task IdleTask swapped out for task Task1 at ticks 189 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 189 +++++++++++++++++++++++
++++++++++++++++++++++++ Task1 started at tick 137 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1409,14 +1047,390 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 30
+++++++++++++++++++++++ Task1 finished at tick 147 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 147 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967148
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967147
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967147
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967146
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967145
+========= task IdleTask swapped out for task Task3 at ticks 151 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 15
++++++++++++++++++++++++ Task3 started at tick 151 +++++++++++++++++++++++
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 14
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 13
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 12
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 11
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 10
+++++++++++++++++++++++ Task3 finished at tick 156 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 156 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967139
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967138
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967137
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967136
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967135
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967134
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967133
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967132
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967132
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967131
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967130
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967129
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967128
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967127
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967126
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967125
+========= task IdleTask swapped out for task Task2 at ticks 171 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 30
++++++++++++++++++++++++ Task2 started at tick 171 +++++++++++++++++++++++
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 29
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 28
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 27
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 26
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 25
+++++++++++++++++++++++ Task2 finished at tick 176 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 176 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967119
+========= task IdleTask swapped out for task Task1 at ticks 177 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
- - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 200 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 200 =========
+ - ticks until deadline 40
++++++++++++++++++++++++ Task1 started at tick 177 +++++++++++++++++++++++
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 39
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 38
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 37
+========= task Task1 swapped out for task Task3 at ticks 181 =========
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 15
++++++++++++++++++++++++ Task3 started at tick 181 +++++++++++++++++++++++
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 14
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 13
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 12
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 11
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 10
+++++++++++++++++++++++ Task3 finished at tick 186 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 186 =========
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 31
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 30
+++++++++++++++++++++++ Task1 finished at tick 187 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 187 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967108
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967107
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967107
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967106
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967105
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967104
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967103
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967102
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967101
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967100
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967099
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967098
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967097
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967097
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967096
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1470,13 +1484,13 @@ shed at tick 98 ++++++++++++++++++++++
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967087
+ - ticks until deadline 4294967088
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
- - ticks until deadline 4294967086
+ - ticks until deadline 4294967087
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1491,20 +1505,20 @@ shed at tick 98 ++++++++++++++++++++++
  - ticks until deadline 4294967085
 ========= task IdleTask swapped out for task Task3 at ticks 211 =========
 *** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
+*** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 15
 +++++++++++++++++++++++ Task3 started at tick 211 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
+*** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 14
 *** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
+*** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
@@ -1534,126 +1548,47 @@ shed at tick 98 ++++++++++++++++++++++
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-+++++++++++++++++++++++ Task2 started at tick 217 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
  - ticks until deadline 25
-*** Task1 state is BLOCKED ***
++++++++++++++++++++++++ Task2 started at tick 216 +++++++++++++++++++++++
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 24
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 23
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 22
-++++++++++++++++++++++ Task2 finished at tick 222 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 222 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967073
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967072
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967071
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967070
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967069
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967068
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967067
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967066
-========= task IdleTask swapped out for task Task1 at ticks 230 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 230 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
+### Schedule task: Task2 ###
+ - ticks until deadline 21
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
+### Schedule task: Task2 ###
+ - ticks until deadline 20
+++++++++++++++++++++++ Task2 finished at tick 221 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 221 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 36
++++++++++++++++++++++++ Task1 started at tick 221 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1690,60 +1625,144 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 30
-========= task Task1 swapped out for task Task3 at ticks 241 =========
-*** Task1 state is READY ***
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 29
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 28
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 27
+*** Task1 state is RUNNING ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task1 ###
+ - ticks until deadline 26
+++++++++++++++++++++++ Task1 finished at tick 231 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 231 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967064
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967063
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967062
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967061
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967060
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967059
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967058
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967058
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967057
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967056
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967055
+========= task IdleTask swapped out for task Task3 at ticks 241 =========
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 15
 +++++++++++++++++++++++ Task3 started at tick 241 +++++++++++++++++++++++
-*** Task1 state is READY ***
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 14
-*** Task1 state is READY ***
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 13
-*** Task1 state is READY ***
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 12
-*** Task1 state is READY ***
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 11
-*** Task1 state is READY ***
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 10
 ++++++++++++++++++++++ Task3 finished at tick 246 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task1 at ticks 246 =========
-*** Task1 state is RUNNING ***
+========= task Task3 swapped out for task IdleTask at ticks 246 =========
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 247 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 247 =========
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967049
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1756,12 +1775,6 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967047
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967046
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -1791,6 +1804,12 @@ shed at tick 98 ++++++++++++++++++++++
 *** Task3 state is BLOCKED ***
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
+ - ticks until deadline 4294967043
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
  - ticks until deadline 4294967042
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
@@ -1804,20 +1823,14 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967040
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967039
-========= task IdleTask swapped out for task Task2 at ticks 257 =========
+========= task IdleTask swapped out for task Task2 at ticks 256 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 257 +++++++++++++++++++++++
++++++++++++++++++++++++ Task2 started at tick 256 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -1842,128 +1855,21 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 26
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 262 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 262 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967033
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967032
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967031
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967030
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967030
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967029
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967028
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967027
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967026
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967025
-========= task IdleTask swapped out for task Task3 at ticks 271 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 271 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 276 ++++++++++++++++++++++
-========= task Task3 swapped out for task IdleTask at ticks 276 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294967019
-========= task IdleTask swapped out for task Task1 at ticks 277 =========
+++++++++++++++++++++++ Task2 finished at tick 261 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 261 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 277 +++++++++++++++++++++++
++++++++++++++++++++++++ Task1 started at tick 261 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -2018,20 +1924,132 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 31
+========= task Task1 swapped out for task Task3 at ticks 271 =========
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 15
++++++++++++++++++++++++ Task3 started at tick 271 +++++++++++++++++++++++
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 14
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 13
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 12
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 11
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 10
+++++++++++++++++++++++ Task3 finished at tick 276 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 276 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
- - ticks until deadline 30
-*** Task1 state is RUNNING ***
+ - ticks until deadline 25
+++++++++++++++++++++++ Task1 finished at tick 276 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 276 =========
+*** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 288 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 288 =========
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967019
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967018
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967017
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967016
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967015
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967014
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967013
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967012
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967012
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967011
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967010
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967009
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294967008
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -2086,20 +2104,14 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is RUNNING ***
 ### Schedule task: IdleTask ###
  - ticks until deadline 4294967000
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966999
-========= task IdleTask swapped out for task Task2 at ticks 297 =========
+========= task IdleTask swapped out for task Task2 at ticks 296 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 297 +++++++++++++++++++++++
++++++++++++++++++++++++ Task2 started at tick 296 +++++++++++++++++++++++
 *** Task1 state is BLOCKED ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -2118,6 +2130,12 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 27
+*** Task1 state is BLOCKED ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 26
 ========= task Task2 swapped out for task Task3 at ticks 301 =========
 *** Task1 state is BLOCKED ***
 *** Task2 state is READY ***
@@ -2150,7 +2168,7 @@ shed at tick 98 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 11
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
@@ -2158,102 +2176,27 @@ shed at tick 98 ++++++++++++++++++++++
  - ticks until deadline 10
 ++++++++++++++++++++++ Task3 finished at tick 306 ++++++++++++++++++++++
 ========= task Task3 swapped out for task Task2 at ticks 306 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 21
-*** Task1 state is BLOCKED ***
+*** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 20
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 19
-++++++++++++++++++dline 18
-*
-shed at tick 308 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 309 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966986
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966985
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966984
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966983
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966982
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966981
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966981
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966980
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966979
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966978
-========= task IdleTask swapped out for task Task1 at ticks 318 =========
+++++++++++++++++++++++ Task2 finished at tick 306 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 306 =========
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 318 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 39
++++++++++++++++++++++++ Task1 started at tick 307 +++++++++++++++++++++++
 *** Task1 state is RUNNING ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -2314,8 +2257,86 @@ shed at tick 308 ++++++++++++++++++++++
 *** IdleTask state is READY ***
 ### Schedule task: Task1 ###
  - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 329 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 329 =========
+++++++++++++++++++++++ Task1 finished at tick 317 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 317 =========
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966978
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966977
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966976
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966975
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966974
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966973
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966972
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966972
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966971
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966970
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966969
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966968
+*** Task1 state is BLOCKED ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is RUNNING ***
+### Schedule task: IdleTask ###
+ - ticks until deadline 4294966967
 *** Task1 state is BLOCKED ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is BLOCKED ***
@@ -2353,1494 +2374,3 @@ shed at tick 308 ++++++++++++++++++++++
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 336 ++++++++++++++++++++++
-========= task Task3 swapped out for task IdleTask at ticks 336 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966959
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966958
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966957
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966956
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966955
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966954
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966954
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966953
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966952
-========= task IdleTask swapped out for task Task2 at ticks 344 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 344 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 349 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 349 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966946
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966945
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966944
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966943
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966942
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966941
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966940
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966939
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966938
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966938
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966937
-========= task IdleTask swapped out for task Task1 at ticks 359 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 359 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-========= task Task1 swapped out for task Task3 at ticks 361 =========
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 361 +++++++++++++++++++++++
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 366 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task1 at ticks 366 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 33
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 32
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 31
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 30
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 29
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 28
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 27
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 26
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 25
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 376 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 376 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966919
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966918
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966917
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966916
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966915
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966914
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966913
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966912
-========= task IdleTask swapped out for task Task2 at ticks 384 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 384 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 389 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 389 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966906
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966905
-========= task IdleTask swapped out for task Task3 at ticks 391 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 391 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 396 ++++++++++++++++++++++
-========= task Task3 swapped out for task IdleTask at ticks 396 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966899
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966898
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966898
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966897
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966896
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966895
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966894
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966893
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966892
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966891
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966890
-========= task IdleTask swapped out for task Task1 at ticks 406 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 406 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 36
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 35
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 34
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 33
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 32
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 31
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 30
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 417 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 417 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966878
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966877
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966877
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966876
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966875
-========= task IdleTask swapped out for task Task3 at ticks 421 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 421 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 426 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task2 at ticks 426 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-+++++++++++++++++++++++ Task2 started at tick 427 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 25
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 24
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 23
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 22
-++++++++++++++++++++++ Task2 finished at tick 432 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 432 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966863
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966862
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966861
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966860
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966859
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966858
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966857
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966856
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966855
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966855
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966854
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966853
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966852
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966851
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966850
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966849
-========= task IdleTask swapped out for task Task1 at ticks 447 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 447 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
-========= task Task1 swapped out for task Task3 at ticks 451 =========
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 451 +++++++++++++++++++++++
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 456 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task1 at ticks 456 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 31
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 30
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 29
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 28
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 27
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 26
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 25
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 464 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 464 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966831
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966830
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966829
-========= task IdleTask swapped out for task Task2 at ticks 467 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 467 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 26
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 25
-++++++++++++++++++++++ Task2 finished at tick 472 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 472 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966823
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966822
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966821
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966821
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966820
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966819
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966818
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966817
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966816
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966815
-========= task IdleTask swapped out for task Task3 at ticks 481 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 481 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 486 ++++++++++++++++++++++
-========= task Task3 swapped out for task IdleTask at ticks 486 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966809
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966808
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966807
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966806
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966806
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966805
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966804
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966803
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966802
-========= task IdleTask swapped out for task Task1 at ticks 494 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 494 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 36
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 35
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 34
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 33
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 32
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 31
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 30
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 29
-++++++++++++++++++++++ Task1 finished at tick 505 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 505 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966790
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966789
-========= task IdleTask swapped out for task Task2 at ticks 507 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 507 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-========= task Task2 swapped out for task Task3 at ticks 511 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 15
-+++++++++++++++++++++++ Task3 started at tick 511 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 14
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 13
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 12
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 11
-*** Task1 state is BLOCKED ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 10
-++++++++++++++++++++++ Task3 finished at tick 516 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task2 at ticks 516 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 21
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 20
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 19
-++++++++++++++++++dline 18
-*
-shed at tick 518 ++++++++++++++++++++++
-========= task Task2 swapped out for task IdleTask at ticks 519 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966776
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966775
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966774
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966773
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966772
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966772
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966771
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966770
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966769
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966768
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966767
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966766
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966765
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966764
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966763
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966763
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966762
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966761
-========= task IdleTask swapped out for task Task1 at ticks 535 =========
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 40
-+++++++++++++++++++++++ Task1 started at tick 535 +++++++++++++++++++++++
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 39
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 38
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 37
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 24
-*** Task1 state is RUNNING ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task1 ###
- - ticks until deadline 23
-++++++++++++++++++++++ Task1 finished at tick 552 ++++++++++++++++++++++
-========= task Task1 swapped out for task IdleTask at ticks 552 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966743
-*** Task1 state is BLOCKED ***
-*** Task2 state is BLOCKED ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is RUNNING ***
-### Schedule task: IdleTask ###
- - ticks until deadline 4294966742
-========= task IdleTask swapped out for task Task2 at ticks 554 =========
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 30
-+++++++++++++++++++++++ Task2 started at tick 554 +++++++++++++++++++++++
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 29
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 28
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***
-*** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 27
-*** Task1 state is BLOCKED ***
-*** Task2 state is RUNNING ***
-*** Task3 state is BLOCKED ***

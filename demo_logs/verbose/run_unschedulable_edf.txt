@@ -85,21 +85,21 @@ Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 9
+++++++++++++++++++++++ Task2 finished at tick 10 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 11 =========
 *** Task1 state is READY ***
-*** Task2 state is RUNNING ***
-*** Task3 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
-### Schedule task: Task2 ###
- - ticks until deadline 8
-++++++++++++++++++++++ Task2 finished at tick 12 ++++++++++++++++++++++
-========= task Task2 swapped out for task Task3 at ticks 12 =========
+### Schedule task: Task3 ###
+ - ticks until deadline 29
++++++++++++++++++++++++ Task3 started at tick 11 +++++++++++++++++++++++
 *** Task1 state is READY ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 28
-+++++++++++++++++++++++ Task3 started at tick 12 +++++++++++++++++++++++
 *** Task1 state is READY ***
 *** Task2 state is BLOCKED ***
 *** Task3 state is RUNNING ***
@@ -149,7 +149,7 @@ Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
 ### Schedule task: Task3 ###
  - ticks until deadline 20
 *** Task1 state is READY ***
-*** Task2 state is BLOCKED ***
+*** Task2 state is READY ***
 *** Task3 state is RUNNING ***
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
@@ -214,33 +214,27 @@ Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task3 ###
  - ticks until deadline 9
+++++++++++++++++++++++ Task3 finished at tick 31 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 31 =========
 *** Task1 state is READY ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 8
+### Schedule task: Task2 ###
+ - ticks until deadline 10
++++++++++++++++++++++++ Task2 started at tick 31 +++++++++++++++++++++++
 *** Task1 state is READY ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 7
-*** Task1 state is READY ***
-*** Task2 state is READY ***
-*** Task3 state is RUNNING ***
-*** IdleTask state is READY ***
-### Schedule task: Task3 ###
- - ticks until deadline 6
-++++++++++++++++++++++ Task3 finished at tick 34 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task2 at ticks 34 =========
+### Schedule task: Task2 ###
+ - ticks until deadline 9
 *** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 8
-+++++++++++++++++++++++ Task2 started at tick 34 +++++++++++++++++++++++
 *** Task1 state is READY ***
 *** Task2 state is RUNNING ***
 *** Task3 state is BLOCKED ***
@@ -283,5 +277,5 @@ Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
 *** IdleTask state is READY ***
 ### Schedule task: Task2 ###
  - ticks until deadline 1
-!!!!! Task Task2 cannot meet deadline of 42 ticks !!!!!
+!!!!! Task Task2 cannot meet deadline of 41 ticks !!!!!
 assert failed: at Core/Src/task.c, line 179

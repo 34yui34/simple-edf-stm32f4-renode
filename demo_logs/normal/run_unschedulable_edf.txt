@@ -25,18 +25,11 @@ Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
  - deadline at 4294967295
 ########################## EDF Scheduler Started ##########################
 +++++++++++++++++++++++ Task2 started at tick 1 +++++++++++++++++++++++
-++++++++++++++++++++++ Task2 finished at tick 9 ++++++++++++++++++++++
-========= task Task2 swapped out for task Task3 at ticks 9 =========
-+++++++++++++++++++++++ Task3 started at tick 9 +++++++++++++++++++++++
-========= task Task3 swapped out for task Task2 at ticks 19 =========
-+++++++++++++++++++++++ Task2 started at tick 19 +++++++++++++++++++++++
-++++++++++++++++++++++ Task2 finished at tick 27 ++++++++++++++++++++++
-========= task Task2 swapped out for task Task3 at ticks 27 =========
-++++++++++++++++++++++ Task3 finished at tick 33 ++++++++++++++++++++++
-========= task Task3 swapped out for task Task1 at ticks 33 =========
-+++++++++++++++++++++++ Task1 started at tick 33 +++++++++++++++++++++++
-++++++++++++++++++++++ Task1 finished at tick 49 ++++++++++++++++++++++
-========= task Task1 swapped out for task Task2 at ticks 49 =========
-+++++++++++++++++++++++ Task2 started at tick 49 +++++++++++++++++++++++
-!!!!! Task Task2 cannot meet deadline of 57 ticks !!!!!
+++++++++++++++++++++++ Task2 finished at tick 10 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 11 =========
++++++++++++++++++++++++ Task3 started at tick 11 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 31 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 31 =========
++++++++++++++++++++++++ Task2 started at tick 31 +++++++++++++++++++++++
+!!!!! Task Task2 cannot meet deadline of 41 ticks !!!!!
 assert failed: at Core/Src/task.c, line 179
