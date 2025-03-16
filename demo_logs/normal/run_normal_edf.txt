@@ -1,0 +1,609 @@
+Start: run RUN_NORMAL_SCHELUDABLE_EDF program
+*** Create task: Task1 ***
+ - Current ticks 0,
+ - state 0,
+ - period 40,
+ - xc time 10,
+ - deadline at 40
+*** Create task: Task2 ***
+ - Current ticks 0,
+ - state 0,
+ - period 40,
+ - xc time 5,
+ - deadline at 30
+*** Create task: Task3 ***
+ - Current ticks 0,
+ - state 0,
+ - period 30,
+ - xc time 5,
+ - deadline at 15
+*** Create task: IdleTask ***
+ - Current ticks 0,
+ - state 0,
+ - period 4294967295,
+ - xc time 0,
+ - deadline at 4294967295
+########################## EDF Scheduler Started ##########################
++++++++++++++++++++++++ Task3 started at tick 1 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 5 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 5 =========
++++++++++++++++++++++++ Task2 started at tick 5 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 9 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 9 =========
++++++++++++++++++++++++ Task1 started at tick 9 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 17 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 17 =========
+========= task IdleTask swapped out for task Task3 at ticks 30 =========
++++++++++++++++++++++++ Task3 started at tick 30 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 34 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 34 =========
+========= task IdleTask swapped out for task Task2 at ticks 44 =========
++++++++++++++++++++++++ Task2 started at tick 44 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 48 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 48 =========
++++++++++++++++++++++++ Task1 started at tick 48 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 56 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 56 =========
+========= task IdleTask swapped out for task Task3 at ticks 59 =========
++++++++++++++++++++++++ Task3 started at tick 59 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 63 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 63 =========
+========= task IdleTask swapped out for task Task2 at ticks 83 =========
++++++++++++++++++++++++ Task2 started at tick 83 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 87 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 87 =========
++++++++++++++++++++++++ Task1 started at tick 87 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 88 =========
++++++++++++++++++++++++ Task3 started at tick 88 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 92 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 92 =========
+++++++++++++++++++++++ Task1 finished at tick 99 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 99 =========
+========= task IdleTask swapped out for task Task3 at ticks 117 =========
++++++++++++++++++++++++ Task3 started at tick 117 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 121 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 121 =========
+========= task IdleTask swapped out for task Task2 at ticks 122 =========
++++++++++++++++++++++++ Task2 started at tick 122 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 126 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 126 =========
+========= task IdleTask swapped out for task Task1 at ticks 129 =========
++++++++++++++++++++++++ Task1 started at tick 129 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 137 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 137 =========
+========= task IdleTask swapped out for task Task3 at ticks 146 =========
++++++++++++++++++++++++ Task3 started at tick 146 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 150 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 150 =========
+========= task IdleTask swapped out for task Task2 at ticks 161 =========
++++++++++++++++++++++++ Task2 started at tick 161 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 165 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 165 =========
+========= task IdleTask swapped out for task Task1 at ticks 167 =========
++++++++++++++++++++++++ Task1 started at tick 167 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 175 =========
++++++++++++++++++++++++ Task3 started at tick 175 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 179 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 179 =========
+++++++++++++++++++++++ Task1 finished at tick 179 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 179 =========
+========= task IdleTask swapped out for task Task2 at ticks 200 =========
++++++++++++++++++++++++ Task2 started at tick 200 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 204 =========
++++++++++++++++++++++++ Task3 started at tick 204 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 208 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 208 =========
+++++++++++++++++++++++ Task2 finished at tick 208 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 208 =========
+========= task IdleTask swapped out for task Task1 at ticks 209 =========
++++++++++++++++++++++++ Task1 started at tick 209 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 217 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 217 =========
+========= task IdleTask swapped out for task Task3 at ticks 233 =========
++++++++++++++++++++++++ Task3 started at tick 233 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 237 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 237 =========
+========= task IdleTask swapped out for task Task2 at ticks 243 =========
++++++++++++++++++++++++ Task2 started at tick 243 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 247 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 247 =========
++++++++++++++++++++++++ Task1 started at tick 247 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 255 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 255 =========
+========= task IdleTask swapped out for task Task3 at ticks 262 =========
++++++++++++++++++++++++ Task3 started at tick 262 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 266 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 266 =========
+========= task IdleTask swapped out for task Task2 at ticks 282 =========
++++++++++++++++++++++++ Task2 started at tick 282 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 286 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 286 =========
++++++++++++++++++++++++ Task1 started at tick 286 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 291 =========
++++++++++++++++++++++++ Task3 started at tick 291 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 295 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 295 =========
+++++++++++++++++++++++ Task1 finished at tick 298 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 298 =========
+========= task IdleTask swapped out for task Task3 at ticks 320 =========
++++++++++++++++++++++++ Task3 started at tick 320 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 324 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 324 =========
++++++++++++++++++++++++ Task2 started at tick 324 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 328 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 328 =========
++++++++++++++++++++++++ Task1 started at tick 328 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 336 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 336 =========
+========= task IdleTask swapped out for task Task3 at ticks 349 =========
++++++++++++++++++++++++ Task3 started at tick 349 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 353 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 353 =========
+========= task IdleTask swapped out for task Task2 at ticks 363 =========
++++++++++++++++++++++++ Task2 started at tick 363 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 367 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 367 =========
++++++++++++++++++++++++ Task1 started at tick 367 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 375 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 375 =========
+========= task IdleTask swapped out for task Task3 at ticks 378 =========
++++++++++++++++++++++++ Task3 started at tick 378 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 382 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 382 =========
+========= task IdleTask swapped out for task Task2 at ticks 402 =========
++++++++++++++++++++++++ Task2 started at tick 402 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 406 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 406 =========
++++++++++++++++++++++++ Task1 started at tick 406 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 407 =========
++++++++++++++++++++++++ Task3 started at tick 407 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 411 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 411 =========
+++++++++++++++++++++++ Task1 finished at tick 418 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 418 =========
+========= task IdleTask swapped out for task Task3 at ticks 436 =========
++++++++++++++++++++++++ Task3 started at tick 436 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 440 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 440 =========
+========= task IdleTask swapped out for task Task2 at ticks 441 =========
++++++++++++++++++++++++ Task2 started at tick 441 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 445 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 445 =========
+========= task IdleTask swapped out for task Task1 at ticks 448 =========
++++++++++++++++++++++++ Task1 started at tick 448 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 456 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 456 =========
+========= task IdleTask swapped out for task Task3 at ticks 465 =========
++++++++++++++++++++++++ Task3 started at tick 465 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 469 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 469 =========
+========= task IdleTask swapped out for task Task2 at ticks 480 =========
++++++++++++++++++++++++ Task2 started at tick 480 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 484 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 484 =========
+========= task IdleTask swapped out for task Task1 at ticks 486 =========
++++++++++++++++++++++++ Task1 started at tick 486 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 494 =========
++++++++++++++++++++++++ Task3 started at tick 494 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 498 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 498 =========
+++++++++++++++++++++++ Task1 finished at tick 498 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 498 =========
+========= task IdleTask swapped out for task Task2 at ticks 519 =========
++++++++++++++++++++++++ Task2 started at tick 519 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 523 =========
++++++++++++++++++++++++ Task3 started at tick 523 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 527 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 527 =========
+++++++++++++++++++++++ Task2 finished at tick 527 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 527 =========
+========= task IdleTask swapped out for task Task1 at ticks 528 =========
++++++++++++++++++++++++ Task1 started at tick 528 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 536 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 536 =========
+========= task IdleTask swapped out for task Task3 at ticks 552 =========
++++++++++++++++++++++++ Task3 started at tick 552 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 556 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 556 =========
+========= task IdleTask swapped out for task Task2 at ticks 562 =========
++++++++++++++++++++++++ Task2 started at tick 562 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 566 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 566 =========
++++++++++++++++++++++++ Task1 started at tick 566 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 574 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 574 =========
+========= task IdleTask swapped out for task Task3 at ticks 581 =========
++++++++++++++++++++++++ Task3 started at tick 581 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 585 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 585 =========
+========= task IdleTask swapped out for task Task2 at ticks 601 =========
++++++++++++++++++++++++ Task2 started at tick 601 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 605 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 605 =========
++++++++++++++++++++++++ Task1 started at tick 605 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 610 =========
++++++++++++++++++++++++ Task3 started at tick 610 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 614 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 614 =========
+++++++++++++++++++++++ Task1 finished at tick 617 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 617 =========
+========= task IdleTask swapped out for task Task3 at ticks 639 =========
++++++++++++++++++++++++ Task3 started at tick 639 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 643 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 643 =========
++++++++++++++++++++++++ Task2 started at tick 643 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 647 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 647 =========
++++++++++++++++++++++++ Task1 started at tick 647 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 655 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 655 =========
+========= task IdleTask swapped out for task Task3 at ticks 668 =========
++++++++++++++++++++++++ Task3 started at tick 668 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 672 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 672 =========
+========= task IdleTask swapped out for task Task2 at ticks 682 =========
++++++++++++++++++++++++ Task2 started at tick 682 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 686 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 686 =========
++++++++++++++++++++++++ Task1 started at tick 686 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 694 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 694 =========
+========= task IdleTask swapped out for task Task3 at ticks 697 =========
++++++++++++++++++++++++ Task3 started at tick 697 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 701 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 701 =========
+========= task IdleTask swapped out for task Task2 at ticks 721 =========
++++++++++++++++++++++++ Task2 started at tick 721 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 725 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 725 =========
++++++++++++++++++++++++ Task1 started at tick 725 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 726 =========
++++++++++++++++++++++++ Task3 started at tick 726 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 730 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 730 =========
+++++++++++++++++++++++ Task1 finished at tick 737 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 737 =========
+========= task IdleTask swapped out for task Task3 at ticks 755 =========
++++++++++++++++++++++++ Task3 started at tick 755 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 759 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 759 =========
+========= task IdleTask swapped out for task Task2 at ticks 760 =========
++++++++++++++++++++++++ Task2 started at tick 760 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 764 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 764 =========
+========= task IdleTask swapped out for task Task1 at ticks 767 =========
++++++++++++++++++++++++ Task1 started at tick 767 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 775 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 775 =========
+========= task IdleTask swapped out for task Task3 at ticks 784 =========
++++++++++++++++++++++++ Task3 started at tick 784 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 788 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 788 =========
+========= task IdleTask swapped out for task Task2 at ticks 799 =========
++++++++++++++++++++++++ Task2 started at tick 799 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 803 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 803 =========
+========= task IdleTask swapped out for task Task1 at ticks 805 =========
++++++++++++++++++++++++ Task1 started at tick 805 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 813 =========
++++++++++++++++++++++++ Task3 started at tick 813 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 817 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 817 =========
+++++++++++++++++++++++ Task1 finished at tick 817 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 817 =========
+========= task IdleTask swapped out for task Task2 at ticks 838 =========
++++++++++++++++++++++++ Task2 started at tick 838 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 842 =========
++++++++++++++++++++++++ Task3 started at tick 842 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 846 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 846 =========
+++++++++++++++++++++++ Task2 finished at tick 846 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 846 =========
+========= task IdleTask swapped out for task Task1 at ticks 847 =========
++++++++++++++++++++++++ Task1 started at tick 847 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 855 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 855 =========
+========= task IdleTask swapped out for task Task3 at ticks 871 =========
++++++++++++++++++++++++ Task3 started at tick 871 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 875 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 875 =========
+========= task IdleTask swapped out for task Task2 at ticks 881 =========
++++++++++++++++++++++++ Task2 started at tick 881 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 885 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 885 =========
++++++++++++++++++++++++ Task1 started at tick 885 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 893 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 893 =========
+========= task IdleTask swapped out for task Task3 at ticks 900 =========
++++++++++++++++++++++++ Task3 started at tick 900 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 904 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 904 =========
+========= task IdleTask swapped out for task Task2 at ticks 920 =========
++++++++++++++++++++++++ Task2 started at tick 920 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 924 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 924 =========
++++++++++++++++++++++++ Task1 started at tick 924 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 929 =========
++++++++++++++++++++++++ Task3 started at tick 929 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 933 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 933 =========
+++++++++++++++++++++++ Task1 finished at tick 936 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 936 =========
+========= task IdleTask swapped out for task Task3 at ticks 958 =========
++++++++++++++++++++++++ Task3 started at tick 958 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 962 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 962 =========
++++++++++++++++++++++++ Task2 started at tick 962 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 966 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 966 =========
++++++++++++++++++++++++ Task1 started at tick 966 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 974 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 974 =========
+========= task IdleTask swapped out for task Task3 at ticks 987 =========
++++++++++++++++++++++++ Task3 started at tick 987 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 991 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 991 =========
+========= task IdleTask swapped out for task Task2 at ticks 1001 =========
++++++++++++++++++++++++ Task2 started at tick 1001 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1005 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1005 =========
++++++++++++++++++++++++ Task1 started at tick 1005 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1013 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1013 =========
+========= task IdleTask swapped out for task Task3 at ticks 1016 =========
++++++++++++++++++++++++ Task3 started at tick 1016 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1020 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1020 =========
+========= task IdleTask swapped out for task Task2 at ticks 1040 =========
++++++++++++++++++++++++ Task2 started at tick 1040 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1044 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1044 =========
++++++++++++++++++++++++ Task1 started at tick 1044 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1045 =========
++++++++++++++++++++++++ Task3 started at tick 1045 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1049 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1049 =========
+++++++++++++++++++++++ Task1 finished at tick 1056 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1056 =========
+========= task IdleTask swapped out for task Task3 at ticks 1074 =========
++++++++++++++++++++++++ Task3 started at tick 1074 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1078 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1078 =========
+========= task IdleTask swapped out for task Task2 at ticks 1079 =========
++++++++++++++++++++++++ Task2 started at tick 1079 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1083 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1083 =========
+========= task IdleTask swapped out for task Task1 at ticks 1086 =========
++++++++++++++++++++++++ Task1 started at tick 1086 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1094 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1094 =========
+========= task IdleTask swapped out for task Task3 at ticks 1103 =========
++++++++++++++++++++++++ Task3 started at tick 1103 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1107 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1107 =========
+========= task IdleTask swapped out for task Task2 at ticks 1118 =========
++++++++++++++++++++++++ Task2 started at tick 1118 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1122 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1122 =========
+========= task IdleTask swapped out for task Task1 at ticks 1124 =========
++++++++++++++++++++++++ Task1 started at tick 1124 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1132 =========
++++++++++++++++++++++++ Task3 started at tick 1132 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1136 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1136 =========
+++++++++++++++++++++++ Task1 finished at tick 1136 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1136 =========
+========= task IdleTask swapped out for task Task2 at ticks 1157 =========
++++++++++++++++++++++++ Task2 started at tick 1157 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 1161 =========
++++++++++++++++++++++++ Task3 started at tick 1161 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1165 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 1165 =========
+++++++++++++++++++++++ Task2 finished at tick 1165 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1165 =========
+========= task IdleTask swapped out for task Task1 at ticks 1166 =========
++++++++++++++++++++++++ Task1 started at tick 1166 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1174 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1174 =========
+========= task IdleTask swapped out for task Task3 at ticks 1190 =========
++++++++++++++++++++++++ Task3 started at tick 1190 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1194 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1194 =========
+========= task IdleTask swapped out for task Task2 at ticks 1200 =========
++++++++++++++++++++++++ Task2 started at tick 1200 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1204 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1204 =========
++++++++++++++++++++++++ Task1 started at tick 1204 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1212 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1212 =========
+========= task IdleTask swapped out for task Task3 at ticks 1219 =========
++++++++++++++++++++++++ Task3 started at tick 1219 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1223 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1223 =========
+========= task IdleTask swapped out for task Task2 at ticks 1239 =========
++++++++++++++++++++++++ Task2 started at tick 1239 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1243 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1243 =========
++++++++++++++++++++++++ Task1 started at tick 1243 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1248 =========
++++++++++++++++++++++++ Task3 started at tick 1248 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1252 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1252 =========
+++++++++++++++++++++++ Task1 finished at tick 1255 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1255 =========
+========= task IdleTask swapped out for task Task3 at ticks 1277 =========
++++++++++++++++++++++++ Task3 started at tick 1277 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1281 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 1281 =========
++++++++++++++++++++++++ Task2 started at tick 1281 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1285 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1285 =========
++++++++++++++++++++++++ Task1 started at tick 1285 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1293 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1293 =========
+========= task IdleTask swapped out for task Task3 at ticks 1306 =========
++++++++++++++++++++++++ Task3 started at tick 1306 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1310 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1310 =========
+========= task IdleTask swapped out for task Task2 at ticks 1320 =========
++++++++++++++++++++++++ Task2 started at tick 1320 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1324 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1324 =========
++++++++++++++++++++++++ Task1 started at tick 1324 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1332 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1332 =========
+========= task IdleTask swapped out for task Task3 at ticks 1335 =========
++++++++++++++++++++++++ Task3 started at tick 1335 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1339 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1339 =========
+========= task IdleTask swapped out for task Task2 at ticks 1359 =========
++++++++++++++++++++++++ Task2 started at tick 1359 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1363 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1363 =========
++++++++++++++++++++++++ Task1 started at tick 1363 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1364 =========
++++++++++++++++++++++++ Task3 started at tick 1364 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1368 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1368 =========
+++++++++++++++++++++++ Task1 finished at tick 1375 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1375 =========
+========= task IdleTask swapped out for task Task3 at ticks 1393 =========
++++++++++++++++++++++++ Task3 started at tick 1393 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1397 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1397 =========
+========= task IdleTask swapped out for task Task2 at ticks 1398 =========
++++++++++++++++++++++++ Task2 started at tick 1398 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1402 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1402 =========
+========= task IdleTask swapped out for task Task1 at ticks 1405 =========
++++++++++++++++++++++++ Task1 started at tick 1405 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1413 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1413 =========
+========= task IdleTask swapped out for task Task3 at ticks 1422 =========
++++++++++++++++++++++++ Task3 started at tick 1422 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1426 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1426 =========
+========= task IdleTask swapped out for task Task2 at ticks 1437 =========
++++++++++++++++++++++++ Task2 started at tick 1437 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1441 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1441 =========
+========= task IdleTask swapped out for task Task1 at ticks 1443 =========
++++++++++++++++++++++++ Task1 started at tick 1443 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1451 =========
++++++++++++++++++++++++ Task3 started at tick 1451 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1455 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1455 =========
+++++++++++++++++++++++ Task1 finished at tick 1455 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1455 =========
+========= task IdleTask swapped out for task Task2 at ticks 1476 =========
++++++++++++++++++++++++ Task2 started at tick 1476 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 1480 =========
++++++++++++++++++++++++ Task3 started at tick 1480 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1484 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 1484 =========
+++++++++++++++++++++++ Task2 finished at tick 1484 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1484 =========
+========= task IdleTask swapped out for task Task1 at ticks 1485 =========
++++++++++++++++++++++++ Task1 started at tick 1485 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1493 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1493 =========
+========= task IdleTask swapped out for task Task3 at ticks 1509 =========
++++++++++++++++++++++++ Task3 started at tick 1509 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1513 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1513 =========
+========= task IdleTask swapped out for task Task2 at ticks 1519 =========
++++++++++++++++++++++++ Task2 started at tick 1519 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1523 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1523 =========
++++++++++++++++++++++++ Task1 started at tick 1523 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1531 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1531 =========
+========= task IdleTask swapped out for task Task3 at ticks 1538 =========
++++++++++++++++++++++++ Task3 started at tick 1538 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1542 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1542 =========
+========= task IdleTask swapped out for task Task2 at ticks 1558 =========
++++++++++++++++++++++++ Task2 started at tick 1558 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1562 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1562 =========
++++++++++++++++++++++++ Task1 started at tick 1562 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1567 =========
++++++++++++++++++++++++ Task3 started at tick 1567 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1571 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1571 =========
+++++++++++++++++++++++ Task1 finished at tick 1574 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1574 =========
+========= task IdleTask swapped out for task Task3 at ticks 1596 =========
++++++++++++++++++++++++ Task3 started at tick 1596 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1600 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 1600 =========
++++++++++++++++++++++++ Task2 started at tick 1600 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1604 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1604 =========
++++++++++++++++++++++++ Task1 started at tick 1604 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1612 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1612 =========
+========= task IdleTask swapped out for task Task3 at ticks 1625 =========
++++++++++++++++++++++++ Task3 started at tick 1625 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1629 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1629 =========
+========= task IdleTask swapped out for task Task2 at ticks 1639 =========
++++++++++++++++++++++++ Task2 started at tick 1639 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1643 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1643 =========
++++++++++++++++++++++++ Task1 started at tick 1643 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1651 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1651 =========
+========= task IdleTask swapped out for task Task3 at ticks 1654 =========
++++++++++++++++++++++++ Task3 started at tick 1654 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1658 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1658 =========
+========= task IdleTask swapped out for task Task2 at ticks 1678 =========
++++++++++++++++++++++++ Task2 started at tick 1678 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1682 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task1 at ticks 1682 =========
++++++++++++++++++++++++ Task1 started at tick 1682 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1683 =========
++++++++++++++++++++++++ Task3 started at tick 1683 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1687 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1687 =========
+++++++++++++++++++++++ Task1 finished at tick 1694 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1694 =========
+========= task IdleTask swapped out for task Task3 at ticks 1712 =========
++++++++++++++++++++++++ Task3 started at tick 1712 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1716 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1716 =========
+========= task IdleTask swapped out for task Task2 at ticks 1717 =========
++++++++++++++++++++++++ Task2 started at tick 1717 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1721 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1721 =========
+========= task IdleTask swapped out for task Task1 at ticks 1724 =========
++++++++++++++++++++++++ Task1 started at tick 1724 +++++++++++++++++++++++
+++++++++++++++++++++++ Task1 finished at tick 1732 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1732 =========
+========= task IdleTask swapped out for task Task3 at ticks 1741 =========
++++++++++++++++++++++++ Task3 started at tick 1741 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1745 ++++++++++++++++++++++
+========= task Task3 swapped out for task IdleTask at ticks 1745 =========
+========= task IdleTask swapped out for task Task2 at ticks 1756 =========
++++++++++++++++++++++++ Task2 started at tick 1756 +++++++++++++++++++++++
+++++++++++++++++++++++ Task2 finished at tick 1760 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1760 =========
+========= task IdleTask swapped out for task Task1 at ticks 1762 =========
++++++++++++++++++++++++ Task1 started at tick 1762 +++++++++++++++++++++++
+========= task Task1 swapped out for task Task3 at ticks 1770 =========
++++++++++++++++++++++++ Task3 started at tick 1770 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1774 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task1 at ticks 1774 =========
+++++++++++++++++++++++ Task1 finished at tick 1774 ++++++++++++++++++++++
+========= task Task1 swapped out for task IdleTask at ticks 1774 =========
+========= task IdleTask swapped out for task Task2 at ticks 1795 =========
++++++++++++++++++++++++ Task2 started at tick 1795 +++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 1799 =========
++++++++++++++++++++++++ Task3 started at tick 1799 +++++++++++++++++++++++
+++++++++++++++++++++++ Task3 finished at tick 1803 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 1803 =========
+++++++++++++++++++++++ Task2 finished at tick 1803 ++++++++++++++++++++++
+========= task Task2 swapped out for task IdleTask at ticks 1803 =========
+========= task IdleTask swapped out for task Task1 at ticks 1804 =========
++++++++++++++++++++++++ Task1 started at tick 1804 +++++++++++++++++++++++

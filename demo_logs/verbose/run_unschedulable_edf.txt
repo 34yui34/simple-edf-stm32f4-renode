@@ -1,0 +1,287 @@
+Start: run RUN_UNSCHELUDABLE_TASKSET_EDF program
+*** Create task: Task1 ***
+ - Current ticks 0,
+ - state 0,
+ - period 50,
+ - xc time 20,
+ - deadline at 50
+*** Create task: Task2 ***
+ - Current ticks 0,
+ - state 0,
+ - period 20,
+ - xc time 10,
+ - deadline at 20
+*** Create task: Task3 ***
+ - Current ticks 0,
+ - state 0,
+ - period 40,
+ - xc time 20,
+ - deadline at 40
+*** Create task: IdleTask ***
+ - Current ticks 0,
+ - state 0,
+ - period 4294967295,
+ - xc time 0,
+ - deadline at 4294967295
+########################## EDF Scheduler Started ##########################
++++++++++++++++++++++++ Task2 started at tick 1 +++++++++++++++++++++++
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 18
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 17
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 16
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 15
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 14
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 13
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 12
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 11
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 10
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 9
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is READY ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 8
+++++++++++++++++++++++ Task2 finished at tick 12 ++++++++++++++++++++++
+========= task Task2 swapped out for task Task3 at ticks 12 =========
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 28
++++++++++++++++++++++++ Task3 started at tick 12 +++++++++++++++++++++++
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 27
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 26
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 25
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 24
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 23
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 22
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 21
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 20
+*** Task1 state is READY ***
+*** Task2 state is BLOCKED ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 19
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 18
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 17
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 16
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 15
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 14
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 13
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 12
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 11
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 10
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 9
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 8
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 7
+*** Task1 state is READY ***
+*** Task2 state is READY ***
+*** Task3 state is RUNNING ***
+*** IdleTask state is READY ***
+### Schedule task: Task3 ###
+ - ticks until deadline 6
+++++++++++++++++++++++ Task3 finished at tick 34 ++++++++++++++++++++++
+========= task Task3 swapped out for task Task2 at ticks 34 =========
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 8
++++++++++++++++++++++++ Task2 started at tick 34 +++++++++++++++++++++++
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 7
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 6
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 5
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 4
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 3
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 2
+*** Task1 state is READY ***
+*** Task2 state is RUNNING ***
+*** Task3 state is BLOCKED ***
+*** IdleTask state is READY ***
+### Schedule task: Task2 ###
+ - ticks until deadline 1
+!!!!! Task Task2 cannot meet deadline of 42 ticks !!!!!
+assert failed: at Core/Src/task.c, line 179

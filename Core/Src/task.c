@@ -32,19 +32,6 @@ int create_task(void (*task_func)(void), uint32_t period, uint32_t execution_tim
     task->stack[STACK_SIZE - 1] = 0x01000000;      /* PSR (T-bit set for Thumb mode) */
     task->stack[STACK_SIZE - 2] = (uint32_t)task_func;  /* PC */
     task->stack[STACK_SIZE - 3] = 0xFFFFFFFF;      /* LR (dummy return address) */
-    task->stack[STACK_SIZE - 4] = 0;               /* R12 */
-    task->stack[STACK_SIZE - 5] = 0;               /* R3 */
-    task->stack[STACK_SIZE - 6] = 0;               /* R2 */
-    task->stack[STACK_SIZE - 7] = 0;               /* R1 */
-    task->stack[STACK_SIZE - 8] = 0;               /* R0 */
-    task->stack[STACK_SIZE - 9] = 0;               /* R11 */
-    task->stack[STACK_SIZE - 10] = 0;              /* R10 */
-    task->stack[STACK_SIZE - 11] = 0;              /* R9 */
-    task->stack[STACK_SIZE - 12] = 0;              /* R8 */
-    task->stack[STACK_SIZE - 13] = 0;              /* R7 */
-    task->stack[STACK_SIZE - 14] = 0;              /* R6 */
-    task->stack[STACK_SIZE - 15] = 0;              /* R5 */
-    task->stack[STACK_SIZE - 16] = 0;              /* R4 */
 
     /* Initialize task parameters */
     task->state = TASK_READY;
@@ -82,7 +69,7 @@ uint32_t get_tick(void) {
 void task_yield(void) {
     /* Voluntarily yield by blocking this task */
     __disable_irq();
-    tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period;
+    tasks[current_task_id].deadline = system_ticks + tasks[current_task_id].period + tasks[current_task_id].deadline_period - tasks[current_task_id].execution_time;
     tasks[current_task_id].wait_time = tasks[current_task_id].period - tasks[current_task_id].execution_time;
     tasks[current_task_id].state = TASK_BLOCKED;
     SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
